@@ -7,7 +7,7 @@ console.log(`>>> TEST (done)`);
 
 (async () => {
   console.log("launching chromium");
-  const browser = await chromium.launch(); // Or 'firefox' or 'webkit'.
+  const browser = await chromium.launch({ headless: true });
   console.log("launched chromium");
   const page = await browser.newPage();
   await page.goto(process.env.PLAYWRIGHT_TEST_BASE_URL);
